@@ -74,6 +74,10 @@ const Login = ({history}) => {
                email: res.user.email,
                uid: res.user.uid
            });
+           await DB.collection(res.user.uid).add({
+                name: 'Tarea de ejemplo',
+                fecha: Date.now()
+           });
            setEmail('');
            setPass('');
            setError(null);

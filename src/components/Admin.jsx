@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { withRouter } from "react-router-dom";
 import {AUTH} from '../firebase';
+import Firestore from './Firestore';
 
 const Admin = ({history}) => {
 
@@ -22,7 +23,7 @@ const Admin = ({history}) => {
         <h3 className="text-center">Ruta protegida</h3>
         {
             user && (
-                <h3 className="text-center">{user.email}</h3>
+               <Firestore user={user}/>
             )
         }
     </div>
